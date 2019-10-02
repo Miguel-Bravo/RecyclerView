@@ -4,12 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.video_row.view.*
 
 class MainAdapter: RecyclerView.Adapter<CustomViewHolder>() {
 
+    val videoTitles = listOf("First title", "Second", "3rd", "Mooore Titles")
     // numberOfItems
     override fun getItemCount(): Int {
-        return 3
+        return videoTitles.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -19,11 +21,13 @@ class MainAdapter: RecyclerView.Adapter<CustomViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
+        val videoTitle = videoTitles.get(position)
+        holder?.view?.textView_video_title?.text = videoTitle
 
     }
 
 }
 
-class CustomViewHolder(v: View): RecyclerView.ViewHolder(v) {
+class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view) {
 
 }
