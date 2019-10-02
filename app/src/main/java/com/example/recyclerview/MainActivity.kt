@@ -16,5 +16,11 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView_main.layoutManager = LinearLayoutManager(this)
         recyclerView_main.adapter = MainAdapter()
+
+        fetchJson()
+    }
+
+    fun fetchJson() {
+        println("Attempting to Fetch JSON")
     }
 }
